@@ -10,6 +10,7 @@ correctamente como un objeto de fecha y hora.
 """
 def calculate_monthly_sales(data):
     """Calcula las ventas mensuales agregadas."""
+    
     data['Date'] = pd.to_datetime(data['Date'])
     monthly_sales = data.resample('M', on='Date').sum()
     return monthly_sales
